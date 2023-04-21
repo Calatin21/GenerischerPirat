@@ -1,12 +1,14 @@
 ﻿namespace GenerischerPirat {
-    internal class Pirat<T> where T : Alkohol {
-        T Magen;
-        List<Flasche<T>> flaschen = new List<Flasche<T>>();
+    internal class Pirat<T> where T : IAlkohol {
+        private T Magen {
+            get; set;
+        }
+        private List<Flasche<T>> flaschen { get; set; } = new List<Flasche<T>>();
         public void AddFlasche(Flasche<T> flasche) {
             flaschen.Add(flasche);
         }
         public bool IstLeer() {
-            return flaschen.Count > 0;
+            return flaschen.Count == 0;
         }
         public void Fuellen() {
             Magen = flaschen.First().InhaltFluessig;
@@ -15,7 +17,7 @@
         public String Leeren(Faß<T> faß) {
             String ergebnis = Magen.Name;
             faß.Inhalt.Push(Magen);
-            Magen = null;
+            Magen = default(T);
             return ergebnis;
         }
     }

@@ -1,5 +1,5 @@
 ﻿namespace GenerischerPirat {
-    internal class Alkohol {
+    public interface IAlkohol {
         public string Name {
             get; set;
         }
