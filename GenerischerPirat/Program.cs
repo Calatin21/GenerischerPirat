@@ -14,6 +14,8 @@
             hook.AmMann.Add(flascheRum1);
             hook.AmMann.Add(flascheRum2);
             hook.AmMann.Add(flascheScumm1);
+            hook.Fuellen();
+            hook.Leeren(pott);
         }
     }
 }

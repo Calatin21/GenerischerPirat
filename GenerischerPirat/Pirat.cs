@@ -1,8 +1,6 @@
 ﻿namespace GenerischerPirat {
     internal class Pirat<T> where T : Alkohol {
-        public T Magen {
-            get; set;
-        }
+        T Magen;
         public List<Flasche<T>> AmMann {
             get; set;
         } = new List<Flasche<T>>();
