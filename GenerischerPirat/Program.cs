@@ -3,19 +3,23 @@
         static void Main(string[] args) {
             Faß<Alkohol> pott = new Faß<Alkohol>();
             Pirat<Alkohol> hook = new Pirat<Alkohol>();
-            Flasche<Rum> flascheRum1 = new Flasche<Rum>() { InhaltFluessig = new Rum() { Name = "Captain Morgan", Plantage = "Falmouth", Information = "Alkoholgehalt 35%" } };
-            Flasche<Rum> flascheRum2 = new Flasche<Rum>() { InhaltFluessig = new Rum() { Name = "Weißer Rum", Plantage = "St. Kitts", Information = "Alkoholgehalt 42%" } };
-            Flasche<Rum> flascheRum3 = new Flasche<Rum>() { InhaltFluessig = new Rum() { Name = "Brauner Rum", Plantage = "St. Nevis", Information = "Alkoholgehalt 33%" } };
+            Rum rum1 = new Rum() { Name = "Captain Morgan", Plantage = "Falmouth", Information = "Alkoholgehalt 35%" };
+            Rum rum2 = new Rum() { Name = "Weißer Rum", Plantage = "St. Kitts", Information = "Alkoholgehalt 42%" };
+            Rum rum3 = new Rum() { Name = "Brauner Rum", Plantage = "St. Nevis", Information = "Alkoholgehalt 33%" };
 
-            Flasche<Scumm> flascheScumm1 = new Flasche<Scumm>() { InhaltFluessig = new Scumm() { Name = "Monkey Island", Information = "Selbstgebrauter Alkohol mit 75% Alkohol" } };
-            flascheScumm1.InhaltFluessig.Inhalt.Add(flascheRum2.InhaltFluessig);
-            flascheScumm1.InhaltFluessig.Inhalt.Add(flascheRum3.InhaltFluessig);
+            Scumm scumm1 = new Scumm() { Name = "Monkey Island", Information = "Selbstgebrauter Alkohol mit 75% Alkohol" };
+            scumm1.Inhalt.Add(rum2);
+            scumm1.Inhalt.Add(rum3);
 
-            hook.AddFlasche(flascheRum1);
-            hook.AddFlasche(flascheRum2);
-            hook.AddFlasche(flascheScumm1);
+            hook.AddFlasche(rum1);
+            hook.AddFlasche(rum2);
+            hook.AddFlasche(scumm1);
             hook.Fuellen();
-            hook.Leeren(pott);
+            Console.WriteLine(hook.Leeren(pott));
+            hook.Fuellen();
+            Console.WriteLine(hook.Leeren(pott));
+            hook.Fuellen();
+            Console.WriteLine(hook.Leeren(pott));
         }
     }
 }
