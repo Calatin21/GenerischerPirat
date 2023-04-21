@@ -11,9 +11,9 @@
             flascheScumm1.InhaltFluessig.Inhalt.Add(flascheRum2.InhaltFluessig);
             flascheScumm1.InhaltFluessig.Inhalt.Add(flascheRum3.InhaltFluessig);
 
-            hook.AmMann.Add(flascheRum1);
-            hook.AmMann.Add(flascheRum2);
-            hook.AmMann.Add(flascheScumm1);
+            hook.AddFlasche(flascheRum1);
+            hook.AddFlasche(flascheRum2);
+            hook.AddFlasche(flascheScumm1);
             hook.Fuellen();
             hook.Leeren(pott);
         }
